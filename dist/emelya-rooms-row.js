@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "https://unpkg.com/lit@2.0.0/index.js?module";
 
-/* CARD */
+/* ─────────────────────────────────────────
+   CARD
+───────────────────────────────────────── */
 class EmelyaRoomsRow extends LitElement {
   static properties = {
     hass: {},
@@ -364,7 +366,9 @@ class EmelyaRoomsRow extends LitElement {
   }
 }
 
-/* EDITOR */
+/* ─────────────────────────────────────────
+   EDITOR
+───────────────────────────────────────── */
 const ICON_OPTIONS = [
   { label: "Спальня",        value: "/local/images/icons/bedroom.svg" },
   { label: "Гостиная",       value: "/local/images/icons/living_room.svg" },
@@ -524,12 +528,6 @@ class EmelyaRoomsRowEditor extends LitElement {
       align-items: center; justify-content: center; flex-shrink: 0; transition: color 0.15s;
     }
     .path-clear:hover { color: var(--error-color, #db4437); }
-
-    .img-hint { font-size: 12px; color: var(--secondary-text-color); line-height: 1.6; }
-    .img-hint code {
-      background: var(--secondary-background-color); border: 1px solid var(--divider-color);
-      border-radius: 4px; padding: 1px 5px; font-size: 11px;
-    }
 
     input[type="file"] { display: none; }
   `;
@@ -703,11 +701,6 @@ class EmelyaRoomsRowEditor extends LitElement {
             <button class="path-clear" @click=${this._clearRoomBackground.bind(this)}>✕</button>
           </div>
         ` : ""}
-
-        <div class="img-hint">
-          Файл сохраняется в <code>config/www/</code> и доступен по пути <code>/local/имя_файла</code>.
-          Поддерживаются PNG, JPG, WebP и AVIF.
-        </div>
       </div>
     `;
   }
@@ -803,7 +796,7 @@ class EmelyaRoomsRowEditor extends LitElement {
                   placeholder='{"brightness": 150}'></textarea>
                 ${this._jsonError
                   ? html`<div class="error">${this._jsonError}</div>`
-                  : html`<div class="hint">Оставь пустым, если дополнительные данные не нужны.</div>`}
+                  : html`<div class="hint">Оставьте пустым, если дополнительные данные не нужны.</div>`}
               </div>
             ` : ""}
 
@@ -948,7 +941,9 @@ class EmelyaRoomsRowEditor extends LitElement {
   }
 }
 
-/* REGISTRATION */
+/* ─────────────────────────────────────────
+   REGISTRATION
+───────────────────────────────────────── */
 EmelyaRoomsRow.getConfigElement = function () {
   return document.createElement("emelya-rooms-row-editor");
 };
