@@ -1,5 +1,4 @@
-import { LitElement, html, css } from "https://unpkg.com/lit@2.0.0/index.js?module";
-
+import { LitElement, html, css } from "/local/lib/lit.js";
 /* CARD */
 class EmelyaRoomsRow extends LitElement {
   static properties = {
