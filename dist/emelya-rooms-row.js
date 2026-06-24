@@ -45,7 +45,6 @@ class EmelyaRoomsRow extends LitElement {
         return;
       }
     }
-    // Если ни одна не совпала - оставляем 0
   }
 
   setConfig(config) {
@@ -82,7 +81,7 @@ class EmelyaRoomsRow extends LitElement {
 
       const img = new Image();
       img.onload = () => {
-        el._bgLoaded = true;          // <-- добавить этот флаг
+        el._bgLoaded = true; 
         el.classList.add("bg-loaded");
       };
       img.src = bgUrl;
